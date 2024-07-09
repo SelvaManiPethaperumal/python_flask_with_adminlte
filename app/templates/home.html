@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+</style>
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h2>Upload File</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <div><input type="file" name="file" id="file"></div>
+        <div style="float:right ;"><input type="checkbox" name="is_company_po" id="is_company_po"> File is Company PO</div>
+        <div><button type="submit">Upload</button></div>
+    </form>
+    <div id="response"></div>
+    <div id="get_result" style="display: none;">
+        <!-- <p>Ask the multiple questions separated by comma (, )</p> -->
+        <!-- <textarea id="questions" rows="4" cols="50"></textarea> -->
+        <input type="hidden" id="file_name">
+        <p id="error_text" id="error_text" style="color: red; display: none;">mandatory * </p>
+        <button type="submit"  id="get_result_class" style="display: none;">Get Result</button>
+        <a href="" id='filedownload' download>click here to download</a>
+
+    </div>
+    <center><div style="display: none;" class="loader" id="#loader"></div> </center>
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/js/upload.js"></script>
+</body>
+</html>

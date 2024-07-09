@@ -1,0 +1,20 @@
+version: "3.5"
+
+services:
+  server:
+    container_name: AI_ADMIN
+    build: .
+    command: python app.py --verbose
+    hostname: AI
+    ports:
+      - "90:90"
+    volumes:
+      - ".:/usr/app:rw"
+    restart: always
+    environment:
+      ENV: DEVELOPMENT
+    networks:
+      - backend
+networks:
+  backend:
+

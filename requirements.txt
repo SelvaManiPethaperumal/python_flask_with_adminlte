@@ -1,0 +1,7 @@
+Flask
+msal
+flask_sqlalchemy
+flask_migrate
+psycopg2-binary
+pandas
+openpyxl
